@@ -27,7 +27,7 @@ CREATE TABLE `employee` (
 6. buat folder :
 c:\program1\phpjava
 
-7. copy file phpjavabridge.jar ke folder c:\program1\phpjava
+7. copy file javabridge.jar ke folder c:\program1\phpjava
 
 8. buat folder :
 c:\program1\hibernate\projEmp
