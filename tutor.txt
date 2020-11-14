@@ -1,0 +1,75 @@
+menjalankan program hibernate di program php menggunakan phpjava bridge
+1. jalankan virtual box
+2. ada 2 komputer yang digunakan untuk menjalankan program ini
+
+catatan : ip address bisa di ganti sesuai selera
+komputer 192.168.228.1 : windows 10/8/7    
+komputer 192.168.228.4 : linux
+
+
+dikomputer 192.168.228.1 : windows 10/8/7
+3. jalankan apache dan mysql di xampp control panel :
+
+4. buat tabel di database test (lebih lengkap di file employee.sql):
+CREATE TABLE `employee` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `firstName` varchar(45) DEFAULT NULL,
+ `lastName` varchar(45) DEFAULT NULL,
+ `salary` int(11) NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1
+
+
+5. kemudian isi datanya
+
+-------------
+
+6. buat folder :
+c:\program1\phpjava
+
+7. copy file phpjavabridge.jar ke folder c:\program1\phpjava
+
+8. buat folder :
+c:\program1\hibernate\projEmp
+
+9. copy file firstphpjava1.7z dan extract di folder tersebut
+
+
+8. compile program di folder c:\program1\hibernate\projEmp\firstphpjava1 :
+javac -classpath ".;c:\program1\hibernate\projEmp\firstphpjava1\libs\*" -d . *.java
+
+10. buat file jar di folder c:\program1\hibernate\projEmp\firstphpjava1 :
+jar cvmf MANIFEST.MF StoreData.jar com\javatpoint\mypackage\*.class com\javatpoint\mypackage\*.xml
+
+
+11. copy file StoreData.jar ke folder :
+c:\program1\hibernate\projEmp\firstphpjava1\libs\
+
+12. jalankan server phpjava di folder c:\program1\phpjava :
+java -Djava.ext.dirs="C:\Program Files\Java\jre1.8.0_221\lib\ext";C:\WINDOWS\Sun\Java\lib\ext;C:\program1\hibernate\projEmp\firstphpjava\libs -jar JavaBridge.jar SERVLET:8087
+
+catatan : lokasi jre java bisa di sesuaikan dgn yang terinstall di komputer anda
+======================================
+di komputer 192.168.228.4 : linux
+
+jalankan server apache di linux
+
+
+13. copy file getEmployee.php ke folder /var/www/html
+
+
+14. setting php agar dapat membaca file lewat url :
+
+pada php.ini  ubah
+allow_url_include=Off menjadi allow_url_include=On
+
+15. kemudian restart apache.
+sudo /etc/init.d/apache2 restart
+
+
+16. jalankan file getEmployee.php di browser :
+http:\\192.168.228.4\getEmployee.php
+
+
+
+
