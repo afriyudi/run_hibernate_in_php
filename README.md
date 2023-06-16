@@ -3,3 +3,6 @@
 tutorial ini merupakan langkah-langkah meenjalankan hibernate framework di program PHP, untuk memungkinkan itu digunakan phpjava bridge.
 suport sampai dgn versi php <7.2.
 nantikan untuk settingan php >=7.2
+
+
+youtube : https://youtu.be/dIn3xVN9Ngs
